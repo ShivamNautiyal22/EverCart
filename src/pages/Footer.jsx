@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   const NavLinks = [
-    { name: "Home", to: "home" },
-    { name: "Shop", to: "home" },
+    { name: "Home", to: "/" },
+    { name: "Collection", to: "collection" },
     { name: "About", to: "about" },
     { name: "Contact", to: "contact" },
   ];
@@ -22,15 +23,15 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-xl font-medium mb-5">COMPANY</p>
-          <ul className="flex flex-col gap-1 text-gray-600">
+          <div className="flex flex-col gap-1 text-gray-600">
             {NavLinks.map((item, index) => {
               return (
-                <li key={index} className="tracking-wider leading-relaxed ">
-                  <a href="#">{item.name}</a>
-                </li>
+                <NavLink to={item.to} key={index} className="tracking-wider leading-relaxed ">
+                 {item.name}
+                </NavLink>
               );
             })}
-          </ul>
+          </div>
         </div>
         <div>
           <p className="text-xl font-medium mb-5">GET IN TOUCH</p>

@@ -1,6 +1,6 @@
 import React from "react";
 import HeroImage from "/hero.jpg";
-import Collection from "./Collection";
+import Shop from "./Shops";
 import Services from "./Services";
 import Newsletter from "../components/Newsletter"
 
@@ -34,7 +34,7 @@ const Home = () => {
           />
         </div>
       </section>
-      <Collection />
+      <Shop />
       <Services />
       <Newsletter />
     </>

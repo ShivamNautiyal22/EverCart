@@ -28,39 +28,42 @@ const About = () => {
             you better deals, exclusive collections, and a platform that grows
             with your needs.
           </p>
-          <p className="text-[15px] leading-relaxed tracking-wider">
-            EverCart was crafted with care by <strong>Shivam Nautiyal</strong>,
-            a self-taught web developer passionate about creating smooth and
-            scalable online experiences. This platform is the result of
-            countless hours of coding, debugging, and designing. You can
-            explore more of Shivam's work at{" "}
-            <a
-              href="https://shivamnautiyal.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700"
-            >
-              Shivam's Portfolio
-            </a>
-            , or connect via{" "}
-            <a
-              href="https://github.com/shivamnautiyal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://linkedin.com/in/shivamnautiyal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-            . Every click you make on EverCart is powered by a dream turned into
-            code.
-          </p>
+          <h1>
+            <p className="text-base font-semibold mb-2">Author</p>
+            <p className="text-[15px] leading-relaxed tracking-wider">
+              EverCart was crafted with care by <strong>Shivam Nautiyal</strong>
+              , a self-taught web developer passionate about creating smooth and
+              scalable online experiences. This platform is the result of
+              countless hours of coding, debugging, and designing. You can
+              explore more of Shivam's work at{" "}
+              <a
+                href="https://shivamnautiyal.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700"
+              >
+                Shivam's Portfolio
+              </a>
+              , or connect via{" "}
+              <a
+                href="https://github.com/shivamnautiyal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://linkedin.com/in/shivamnautiyal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              . Every click you make on EverCart is powered by a dream turned
+              into code.
+            </p>
+          </h1>
         </div>
       </div>
     </section>
