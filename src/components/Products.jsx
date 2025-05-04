@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ProductContext } from "../api/Products";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const { products } = useContext(ProductContext);
 
-  const API = "https://fakestoreapi.com/products?offset=10&limit=10";
-
-  useEffect(() => {
-    fetch(API)
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+    const [limitedProducts, setLimitedProducts] = useState([]);
+  
+    useEffect(() => {
+      if (products && products.length > 0) {
+        const slicedProducts = products.slice(0, 8);
+        setLimitedProducts(slicedProducts);
+      }
+    }, [products]);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 leading-relaxed tracking-wider my-10">
-      {products.map((product) => {
+      {limitedProducts.map((product) => {
         return (
           <div
             key={product.id}

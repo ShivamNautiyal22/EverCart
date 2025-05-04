@@ -40,9 +40,9 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex items-center gap-3 md:gap-5 ">
-              <NavLink to="/collection"  onClick={() => setSearchIcon(!searchIcon)}>
+              {/* <NavLink to="/collection"  onClick={() => setSearchIcon(!searchIcon)}>
                 <Search />
-              </NavLink>
+              </NavLink> */}
               <NavLink to="/sign-up" onClick={() => setSearchIcon(false)}>
                 <CircleUser />
               </NavLink>

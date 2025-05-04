@@ -8,8 +8,10 @@ import AppLayout from "./UI/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
 import SignUp from "./components/SignUp";
 import Cart from "./pages/Cart";
+import { ProductProvider } from "./api/Products";
 
 const App = () => {
+  
   let router = createBrowserRouter([
     {
       path: "/",
@@ -45,10 +47,11 @@ const App = () => {
   ]);
 
   return (
-   
-    <div className="px-4 sm:px-[4vw] md:px-[6vw] lg:px-[7vw]">
-      <RouterProvider router={router} />
-    </div>
+    <ProductProvider>
+      <div className="px-4 sm:px-[4vw] md:px-[6vw] lg:px-[7vw]">
+        <RouterProvider router={router} />
+      </div>
+    </ProductProvider>
   );
 };
 
