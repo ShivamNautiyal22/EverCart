@@ -9,6 +9,8 @@ import ErrorPage from "./pages/ErrorPage";
 import SignUp from "./components/SignUp";
 import Cart from "./pages/Cart";
 import { ProductProvider } from "./api/Products";
+import IndividualProduct from "./pages/IndividualProduct";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   
@@ -35,12 +37,20 @@ const App = () => {
           element: <Collection />,
         },
         {
+          path: "/collection/:productName",
+          element: <IndividualProduct />,
+        },
+        {
           path: "/sign-up",
           element: <SignUp />,
         },
         {
           path: "/cart",
           element: <Cart />,
+        },
+        {
+          path: "/cart/checkout",
+          element: <Checkout />,
         },
       ],
     },

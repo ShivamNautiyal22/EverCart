@@ -9,7 +9,7 @@ const Collection = () => {
     <section className="my-10 leading-relaxed tracking-wider">
       <div className="flex items-center justify-center gap-2 cursor-pointer mb-15">
         <p className="font-semibold text-xl md:text-3xl">
-          EVERCART <sspan className="text-gray-500">COLLECTION</sspan>
+          EVERCART <span className="text-gray-500">COLLECTION</span>
         </p>
         <p className="w-8 md:w-11 h-[2px] bg-[#414141] "></p>
       </div>
