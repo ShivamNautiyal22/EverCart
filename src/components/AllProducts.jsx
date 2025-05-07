@@ -28,8 +28,7 @@ const AllProducts = ({ searchQuery, sortOption, category }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 leading-relaxed tracking-wider my-10">
       {sortedProducts.map((product, index) => {
-        const duration = 500 + index * 200; // 500ms + 200ms * index
-        const delay = index * 100;
+        
         return (
           <div
             data-aos="flip-right"

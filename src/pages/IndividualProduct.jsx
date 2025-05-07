@@ -2,22 +2,44 @@ import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router";
 import { ProductContext } from "../api/Products";
 import { handleAddToCartButton } from "../utils/AddtoCartFn";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const IndividualProduct = () => {
-  
-  const { productName } = useParams(); 
+  const { productName } = useParams();
+  const navigate = useNavigate();
   const { products } = useContext(ProductContext);
 
   const product = products.find((p) => p.title.toString() === productName);
-  
+
   const Navigate = useNavigate();
 
   if (!product) {
-    return <div>Product not found!</div>;
+    return (
+      <div className="flex flex-col justify-center items-center h-[90vh]">
+        <div className="w-100 h-50">
+          <DotLottieReact
+            src="https://lottie.host/4fa17b41-50be-4d83-8281-7ff0216b7fa6/ZFe6EWrNWj.lottie"
+            loop
+            autoplay
+          />
+        </div>
+        <h1 className="text-5xl leading-relaxed tracking-wide prata">
+          Product Not Found
+        </h1>
+        <button
+          onClick={() => {
+            navigate(-1);
+          }}
+          className="bg-black text-white px-6 rounded-sm cursor-pointer py-2"
+        >
+          Go Back
+        </button>
+      </div>
+    );
   }
 
   return (
-    <div className="grid grid-cols-2 my-20 leading-relaxed tracking-wider relative">
+    <div className="grid grid-cols-1 space-y-4 md:space-y-0 md:grid-cols-2 my-20 leading-relaxed tracking-wider relative">
       <div>
         <img
           src={product.image}
@@ -43,7 +65,10 @@ const IndividualProduct = () => {
         </p>
 
         <div className="flex gap-3 items-center">
-          <button onClick={() => handleAddToCartButton(product)} className="bg-black text-white py-3 px-5 uppercase rounded-[5px] my-5 cursor-pointer">
+          <button
+            onClick={() => handleAddToCartButton(product)}
+            className="bg-black text-white py-3 px-5 uppercase rounded-[5px] my-5 cursor-pointer"
+          >
             Add To Cart
           </button>
           <button
