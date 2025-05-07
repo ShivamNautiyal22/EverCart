@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -13,19 +13,17 @@ import IndividualProduct from "./pages/IndividualProduct";
 import Checkout from "./pages/Checkout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Loading from "./components/Loading";
 
 const App = () => {
-
-    useEffect(() => {
-      AOS.init({
-        duration: 500,
-        once: false,
-      });
-    }, []);
-  
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+    });
+  }, []);
 
   let router = createBrowserRouter([
     {
@@ -68,6 +66,20 @@ const App = () => {
       ],
     },
   ]);
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <ProductProvider>
