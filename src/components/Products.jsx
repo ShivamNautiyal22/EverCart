@@ -4,21 +4,26 @@ import { ProductContext } from "../api/Products";
 const Products = () => {
   const { products } = useContext(ProductContext);
 
-    const [limitedProducts, setLimitedProducts] = useState([]);
-  
-    useEffect(() => {
-      if (products && products.length > 0) {
-        const slicedProducts = products.slice(0, 8);
-        setLimitedProducts(slicedProducts);
-      }
-    }, [products]);
+  const [limitedProducts, setLimitedProducts] = useState([]);
+
+  useEffect(() => {
+    if (products && products.length > 0) {
+      const slicedProducts = products.slice(0, 8);
+      setLimitedProducts(slicedProducts);
+    }
+  }, [products]);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 leading-relaxed tracking-wider my-10">
-      {limitedProducts.map((product) => {
+      {limitedProducts.map((product,index) => {
+        const duration = 500 + index * 50; // 500ms + 200ms * index
+        const delay = index * 50;
         return (
           <div
             key={product.id}
+            data-aos="fade-down-right"
+            data-aos-duration={duration}
+            data-aos-delay={delay}
             className="relative rounded-[10px] overflow-hidden cursor-pointer group bg-pink-100"
           >
             <img
@@ -32,7 +37,6 @@ const Products = () => {
                 <h1 className="text-lg font-bold">${product.price}</h1>
               </div>
             </div>
-           
           </div>
         );
       })}

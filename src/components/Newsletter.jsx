@@ -2,7 +2,7 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <div className="my-20 px-4 leading-relaxed tracking-wider flex flex-col items-center text-center">
+    <div data-aos="flip-left" data-aos-duration=  "900" className="my-20 px-4 leading-relaxed tracking-wider flex flex-col items-center text-center">
       <h1 className="text-3xl mb-3 prata">Join Our Newsletter</h1>
       <p className="text-gray-500 mb-6">Be the first to hear about new features, content, and updates.</p>
   

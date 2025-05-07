@@ -7,13 +7,13 @@ const Collection = () => {
   const [sortOption, setSortOption] = useState("RANDOMLY");
   const [category, setCategory] = useState("");
 
-  console.log(category);
-  console.log(sortOption);
-  
 
   return (
     <section className="my-10 leading-relaxed tracking-wider">
-      <div className="flex items-center justify-center gap-2 cursor-pointer mb-15">
+      <div
+        data-aos="fade-up"
+        className="flex items-center justify-center gap-2 cursor-pointer mb-15"
+      >
         <p className="font-semibold text-xl md:text-3xl">
           EVERCART <span className="text-gray-500">COLLECTION</span>
         </p>
@@ -25,6 +25,8 @@ const Collection = () => {
 
       <div className="tracking-wider flex sm:flex-row flex-col justify-center gap-4 sm:gap-10">
         <select
+          data-aos="fade-up"
+          data-aos-duration="800"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
           className="block w-full p-2 rounded-md border border-gray-300 bg-white text-gray-700 focus:outline-none"
@@ -35,6 +37,8 @@ const Collection = () => {
         </select>
 
         <select
+        data-aos="fade-up" 
+        data-aos-duration="1000"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           className="block w-full p-2 rounded-md border border-gray-300 bg-white text-gray-700 focus:outline-none"
@@ -53,7 +57,11 @@ const Collection = () => {
       </div>
 
       {/* AllProducts with searchQuery */}
-      <AllProducts searchQuery={searchQuery} sortOption={sortOption} category={category} />
+      <AllProducts
+        searchQuery={searchQuery}
+        sortOption={sortOption}
+        category={category}
+      />
     </section>
   );
 };

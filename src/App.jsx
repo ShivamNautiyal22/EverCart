@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -13,8 +13,20 @@ import IndividualProduct from "./pages/IndividualProduct";
 import Checkout from "./pages/Checkout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const App = () => {
+
+    useEffect(() => {
+      AOS.init({
+        duration: 500,
+        once: false,
+      });
+    }, []);
+  
+
   let router = createBrowserRouter([
     {
       path: "/",

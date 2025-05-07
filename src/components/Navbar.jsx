@@ -23,14 +23,19 @@ const Navbar = () => {
       <section className="py-4 border-b-1 border-gray-300">
         <nav className="flex items-center justify-between ">
           <NavLink to="/">
-            <img src={Logo} alt="evercart logo" width={130} />
+            <img data-aos="fade-right" src={Logo} alt="evercart logo" width={130} />
           </NavLink>
           <div className="flex items-center gap-8">
             <div className="hidden md:block">
               <div className="flex items-center gap-5 ">
                 {NavLinks.map((item, index) => {
+                  const duration = 500 + index * 200; // 500ms + 200ms * index
+                  const delay = index * 100;
                   return (
                     <NavLink
+                    data-aos="fade-right"
+            data-aos-duration={duration}
+            data-aos-delay={delay}
                       key={index}
                       to={item.to}
                       className="tracking-wider leading-relaxed antialiased "
@@ -43,7 +48,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex items-center gap-3 md:gap-3 ">
-              <NavLink to="/sign-up" onClick={() => setSearchIcon(false)}>
+              <NavLink  to="/sign-up" onClick={() => setSearchIcon(false)}>
                 <CircleUser />
               </NavLink>
               <NavLink

@@ -3,15 +3,25 @@ import aboutlogo from "/about.jpg";
 const About = () => {
   return (
     <section className="my-10 leading-relaxed tracking-wider ">
-      <div className="flex items-center justify-center gap-2 cursor-pointer mb-15">
+      <div
+        data-aos="fade-up"
+        className="flex items-center justify-center gap-2 cursor-pointer mb-15"
+      >
         <p className="font-semibold text-xl md:text-3xl">
           ABOUT <span className="text-gray-500">US</span>
         </p>
         <p className="w-8 md:w-11 h-[2px] bg-[#414141] "></p>
       </div>
       <div className="flex flex-col lg:flex-row lg:items-start items-center justify-between gap-6">
-        <img src={aboutlogo} alt="" width={400} />
-        <div>
+        <img
+          data-aos="fade-up-right"
+          data-aos-duration="800"
+          src={aboutlogo}
+          alt=""
+          width={400}
+        />
+        <div data-aos="fade-up-left"
+          data-aos-duration="800">
           <p className="text-[15px] leading-relaxed tracking-wider mb-4">
             EverCart is a customer-first e-commerce platform designed to
             simplify online shopping for everyone. From daily essentials to

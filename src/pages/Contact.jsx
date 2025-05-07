@@ -6,15 +6,17 @@ import { Instagram, Facebook ,Twitter  } from 'lucide-react';
 const Contact = () => {
   return (
     <section className="my-15 leading-relaxed tracking-wider">
-      <div className="flex items-center justify-center gap-2 cursor-pointer mb-15">
+      <div data-aos="fade-up" className="flex items-center justify-center gap-2 cursor-pointer mb-15">
         <p className="font-semibold text-xl md:text-3xl">
           CONTACT <span className="text-gray-500">US</span>
         </p>
         <p className="w-8 md:w-11 h-[2px] bg-[#414141] "></p>
       </div>
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6">
-        <img src={contact} alt="" width={400} />
-        <div>
+        <img data-aos="fade-up-right"
+          data-aos-duration="800" src={contact} alt="" width={400} />
+        <div data-aos="fade-up-left"
+          data-aos-duration="800">
           <div className="mb-6 text-center">
             <h1 className="text-2xl mb-4">Our Store</h1>
             <div className="mb-4">

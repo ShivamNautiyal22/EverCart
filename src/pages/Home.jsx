@@ -11,7 +11,7 @@ const Home = () => {
       <section className="flex items-center justify-between my-10 rounded-2xl overflow-hidden tracking-wide leading-relaxed antialiased border-2 border-gray-300">
         <div className="flex flex-col sm:flex-row justify-between">
           <div className="w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
-            <div className="text-[#121212]">
+            <div data-aos="fade-right" className="text-[#121212]">
               <div className="flex items-center gap-2">
                 <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
                 <p className=" font-semibold text-sm md:text-base">
