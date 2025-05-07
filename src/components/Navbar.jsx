@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "/evercart.png";
-import { Search, CircleUser, ShoppingBag, AlignRight, X } from "lucide-react";
+import { CircleUser, ShoppingBag, AlignRight, X, Car } from "lucide-react";
 import { NavLink } from "react-router";
 import SearchBar from "./SearchBar";
 
@@ -15,13 +15,16 @@ const Navbar = () => {
   const [menuIcon, setMenuIcon] = useState(false);
   const [searchIcon, setSearchIcon] = useState(false);
 
+  const TotalCartProducts =
+    JSON.parse(localStorage.getItem("CartProducts")) || [];
+
   return (
     <>
       <section className="py-4 border-b-1 border-gray-300">
         <nav className="flex items-center justify-between ">
-          <div>
+          <NavLink to="/">
             <img src={Logo} alt="evercart logo" width={130} />
-          </div>
+          </NavLink>
           <div className="flex items-center gap-8">
             <div className="hidden md:block">
               <div className="flex items-center gap-5 ">
@@ -39,16 +42,21 @@ const Navbar = () => {
                 })}
               </div>
             </div>
-            <div className="flex items-center gap-3 md:gap-5 ">
-              {/* <NavLink to="/collection"  onClick={() => setSearchIcon(!searchIcon)}>
-                <Search />
-              </NavLink> */}
+            <div className="flex items-center gap-3 md:gap-3 ">
               <NavLink to="/sign-up" onClick={() => setSearchIcon(false)}>
                 <CircleUser />
               </NavLink>
-              <NavLink to="/cart" onClick={() => setSearchIcon(false)}>
-                <ShoppingBag />
+              <NavLink
+                to="/cart"
+                className="relative inline-flex items-center justify-center p-2 rounded-full "
+                onClick={() => setSearchIcon(false)}
+              >
+                <ShoppingBag className="w-6 h-6 text-gray-800" />
+                <span className="absolute top-0 right-0 bg-black text-white text-xs leading-none rounded-full w-5 h-5 flex items-center justify-center">
+                  {TotalCartProducts.length}
+                </span>
               </NavLink>
+
               <a
                 className="block md:hidden"
                 onClick={() => setMenuIcon(!menuIcon)}
@@ -100,7 +108,7 @@ const Navbar = () => {
           </div>
         </nav>
       </section>
-      {searchIcon && <SearchBar setSearchIcon={setSearchIcon}/>}
+      {searchIcon && <SearchBar setSearchIcon={setSearchIcon} />}
     </>
   );
 };

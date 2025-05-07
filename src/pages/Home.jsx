@@ -3,6 +3,7 @@ import HeroImage from "/hero.jpg";
 import Shop from "./Shops";
 import Services from "./Services";
 import Newsletter from "../components/Newsletter"
+import { NavLink } from "react-router";
 
 const Home = () => {
   return (
@@ -20,10 +21,10 @@ const Home = () => {
               <h1 className="text-3xl sm:py-1 lg:text-5xl leading-relaxed prata">
                 Latest Arrivals
               </h1>
-              <div className="flex items-center gap-2 group pt-4 cursor-pointer">
+              <NavLink to="/collection" className="flex items-center gap-2 group pt-4 cursor-pointer">
                 <p className="font-semibold text-sm md:text-base">SHOP NOW</p>
                 <p className="w-8 md:w-11 h-[2px] bg-[#414141] group-hover:w-25 duration-300"></p>
-              </div>
+              </NavLink>
             </div>
           </div>
           <img

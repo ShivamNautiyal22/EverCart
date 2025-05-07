@@ -1,5 +1,7 @@
 // src/utils/cart.js
 
+import { toast } from "react-toastify";
+
 export const handleAddToCartButton = (AddCartProduct) => {
     const existingCart = JSON.parse(localStorage.getItem("CartProducts")) || [];
   
@@ -16,9 +18,10 @@ export const handleAddToCartButton = (AddCartProduct) => {
   
       existingCart.push(cartProduct);
       localStorage.setItem("CartProducts", JSON.stringify(existingCart));
-      console.log("Added to cart:", existingCart);
+      toast.success(`Product added to cart!`);
     } else {
-      alert("Product is already in the cart!");
+      // alert("Product is already in the cart!");
+      toast.warning("Product is already added")
     }
   };
   

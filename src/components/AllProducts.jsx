@@ -4,38 +4,32 @@ import { ProductContext } from "../api/Products";
 import { NavLink } from "react-router";
 import { handleAddToCartButton } from "../utils/AddtoCartFn";
 
-const AllProducts = ({ searchQuery }) => {
+const AllProducts = ({ searchQuery, sortOption, category }) => {
   const { products } = useContext(ProductContext);
 
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // const handleAddToCartButton = (AddCartProduct) => {
-  //   const existingCart = JSON.parse(localStorage.getItem("CartProducts")) || [];
+  const categoryFiltered = category
+  ? filteredProducts.filter((product) => product.category === category)
+  : filteredProducts;
 
-  //   const productExists = existingCart.some((product) => product.id === AddCartProduct.id);
+  const sortedProducts = [...categoryFiltered].sort((a, b) => {
+    if (sortOption === "HIGH_TO_LOW") {
+      return b.price - a.price;
+    } else if (sortOption === "LOW_TO_HIGH") {
+      return a.price - b.price;
+    } else {
+      return 0; 
+    }
+  });
 
-  //   if (!productExists) {
-  //     const cartProduct = {
-  //       image : AddCartProduct.image,
-  //       title : AddCartProduct.title,
-  //       id: AddCartProduct.id,
-  //       stock: AddCartProduct.rating.count,
-  //       price: AddCartProduct.price,
-  //     };
 
-  //     existingCart.push(cartProduct);
-  //     localStorage.setItem("CartProducts", JSON.stringify(existingCart));
-  //     console.log("Added to cart:", existingCart);
-  //   } else {
-  //     alert("Product is already in the cart!");
-  //   }
-  // };
-
+ 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 leading-relaxed tracking-wider my-10">
-      {filteredProducts.map((product) => (
+      {sortedProducts.map((product) => (
         <div
           key={product.id}
           className="relative rounded-[10px] overflow-hidden group py-5 border-2 border-gray-400 px-2"
@@ -63,7 +57,9 @@ const AllProducts = ({ searchQuery }) => {
             </div>
             <div className="flex flex-col gap-2 mt-3">
               <button
-                onClick={() => handleAddToCartButton(product)}
+                onClick={() => {
+                  handleAddToCartButton(product);
+                }}
                 className="bg-pink-200 cursor-pointer rounded-[5px] py-2 px-1 uppercase font-semibold"
               >
                 Add to Cart

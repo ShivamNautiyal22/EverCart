@@ -6,12 +6,12 @@ const LogIn = () => {
       <input
         type="email"
         placeholder="Email"
-        className="focus:outline-none border-2 border-y-gray-800 p-2 max-w-100 rounded-[5px] "
+        className="focus:outline-none border-2 border-y-gray-800 p-2  w-[90vw] sm:w-100 rounded-[5px] "
       />
       <input
         type="password"
         placeholder="Password"
-        className="focus:outline-none border-2 border-y-gray-800 p-2 w-100 rounded-[5px] "
+        className="focus:outline-none border-2 border-y-gray-800 p-2  w-[90vw] sm:w-100 rounded-[5px] "
       />
       
       <a className="text-sm text-end underline text-gray-600 mb-5" href="">

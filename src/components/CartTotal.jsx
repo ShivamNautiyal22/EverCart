@@ -24,7 +24,7 @@ export const CartTotal = ({ cartProducts }) => {
       <h1 className="flex items-center justify-between uppercase">
         Shipping <span>$30</span>
       </h1>
-      <h1 className="flex items-center justify-between uppercase">
+      <h1 className="flex font-semibold border-t pt-3 mt-3 items-center justify-between uppercase">
         Total Price <span>${totalPrice.toFixed(2)}</span>
       </h1>
       <NavLink to="/cart/checkout" state = {{totalItems, totalPrice}}>

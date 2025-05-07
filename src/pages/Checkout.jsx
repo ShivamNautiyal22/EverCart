@@ -142,12 +142,12 @@ const Checkout = () => {
                 <div className="flex justify-between items-center py-2">
                   <span className="text-gray-600">Subtotal</span>
                   <span className="font-medium text-gray-900">
-                    ${totalPrice}
+                    ${totalPrice.toFixed(2)}
                   </span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-t border-gray-300">
                   <span className="font-medium text-gray-900">Total</span>
-                  <span className="font-bold text-gray-900">${totalPrice}</span>
+                  <span className="font-bold text-gray-900">${totalPrice.toFixed(2)}</span>
                 </div>
               </div>
             </div>

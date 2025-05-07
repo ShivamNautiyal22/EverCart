@@ -4,6 +4,12 @@ import SearchBar from "../components/SearchBar"; // Don't forget to import it!
 
 const Collection = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortOption, setSortOption] = useState("RANDOMLY");
+  const [category, setCategory] = useState("");
+
+  console.log(category);
+  console.log(sortOption);
+  
 
   return (
     <section className="my-10 leading-relaxed tracking-wider">
@@ -17,17 +23,27 @@ const Collection = () => {
       {/* SearchBar */}
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-      <div className="tracking-wider flex  justify-center gap-10">
-        <select className="block w-full p-2 rounded-md border border-gray-300 bg-white text-gray-700 focus:outline-none ">
-          <option value="option0">RANDOMLY</option>
-          <option value="option1">HIGH TO LOW</option>
-          <option value="option2">LOW TO HIGH</option>
+      <div className="tracking-wider flex sm:flex-row flex-col justify-center gap-4 sm:gap-10">
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+          className="block w-full p-2 rounded-md border border-gray-300 bg-white text-gray-700 focus:outline-none"
+        >
+          <option value="RANDOMLY">RANDOMLY</option>
+          <option value="HIGH_TO_LOW">HIGH TO LOW</option>
+          <option value="LOW_TO_HIGH">LOW TO HIGH</option>
         </select>
-        <select className="block w-full p-2 rounded-md border border-gray-300 bg-white text-gray-700 focus:border-blue-500 focus:ring-blue-500">
-          <option value="option1">MENS CLOTHING</option>
-          <option value="option2">WOMENS CLOTHING</option>
-          <option value="option3">JEWELERY</option>
-          <option value="option4">ELECTRONICS</option>
+
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="block w-full p-2 rounded-md border border-gray-300 bg-white text-gray-700 focus:outline-none"
+        >
+          <option value="">ALL CATEGORIES</option>
+          <option value="men's clothing">MENS CLOTHING</option>
+          <option value="women's clothing">WOMENS CLOTHING</option>
+          <option value="jewelery">JEWELERY</option>
+          <option value="electronics">ELECTRONICS</option>
         </select>
       </div>
 
@@ -37,7 +53,7 @@ const Collection = () => {
       </div>
 
       {/* AllProducts with searchQuery */}
-      <AllProducts searchQuery={searchQuery} />
+      <AllProducts searchQuery={searchQuery} sortOption={sortOption} category={category} />
     </section>
   );
 };

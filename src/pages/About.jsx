@@ -9,7 +9,7 @@ const About = () => {
         </p>
         <p className="w-8 md:w-11 h-[2px] bg-[#414141] "></p>
       </div>
-      <div className="flex flex-col md:flex-row justify-between gap-6">
+      <div className="flex flex-col lg:flex-row lg:items-start items-center justify-between gap-6">
         <img src={aboutlogo} alt="" width={400} />
         <div>
           <p className="text-[15px] leading-relaxed tracking-wider mb-4">
@@ -29,7 +29,7 @@ const About = () => {
             with your needs.
           </p>
           <h1>
-            <p className="text-base font-semibold mb-2">Author</p>
+            <p className="text-base font-semibold mb-2">Developer</p>
             <p className="text-[15px] leading-relaxed tracking-wider">
               EverCart was crafted with care by <strong>Shivam Nautiyal</strong>
               , a self-taught web developer passionate about creating smooth and
@@ -37,7 +37,7 @@ const About = () => {
               countless hours of coding, debugging, and designing. You can
               explore more of Shivam's work at{" "}
               <a
-                href="https://shivamnautiyal.dev"
+                href="https://its-shivam-portfolio.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-700"
@@ -46,17 +46,19 @@ const About = () => {
               </a>
               , or connect via{" "}
               <a
-                href="https://github.com/shivamnautiyal"
+                href="https://github.com/ShivamNautiyal22"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-blue-700"
               >
                 GitHub
               </a>{" "}
               and{" "}
               <a
-                href="https://linkedin.com/in/shivamnautiyal"
+                href="https://www.linkedin.com/in/shivam-nautiyal-4ba505237"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-blue-700"
               >
                 LinkedIn
               </a>

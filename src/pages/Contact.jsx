@@ -12,10 +12,10 @@ const Contact = () => {
         </p>
         <p className="w-8 md:w-11 h-[2px] bg-[#414141] "></p>
       </div>
-      <div className="flex flex-col md:flex-row justify-center gap-6">
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6">
         <img src={contact} alt="" width={400} />
         <div>
-          <div className="mb-6">
+          <div className="mb-6 text-center">
             <h1 className="text-2xl mb-4">Our Store</h1>
             <div className="mb-4">
                 <p className="text-gray-700">97 Warren St, RG7 2ES</p>
@@ -27,8 +27,8 @@ const Contact = () => {
             </div>
           </div>
           <div>
-            <h1 className="text-2xl mb-5">Follow Us On</h1>
-            <div className="mb-4 flex gap-4">
+            <h1 className="text-2xl mb-5 text-center">Follow Us On</h1>
+            <div className="mb-4 flex gap-4 justify-center">
               <a href="" className="bg-pink-200 p-3 rounded-full hover:scale-110 duration-300"><Instagram/></a>
               <a href="" className="bg-pink-200 p-3 rounded-full hover:scale-110 duration-300"><Facebook/></a>
               <a href="" className="bg-pink-200 p-3 rounded-full hover:scale-110 duration-300"><Twitter/></a>

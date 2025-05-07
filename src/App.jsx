@@ -11,14 +11,15 @@ import Cart from "./pages/Cart";
 import { ProductProvider } from "./api/Products";
 import IndividualProduct from "./pages/IndividualProduct";
 import Checkout from "./pages/Checkout";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  
   let router = createBrowserRouter([
     {
       path: "/",
       element: <AppLayout />,
-      errorElement : <ErrorPage />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/",
@@ -58,6 +59,15 @@ const App = () => {
 
   return (
     <ProductProvider>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
       <div className="px-4 sm:px-[4vw] md:px-[6vw] lg:px-[7vw]">
         <RouterProvider router={router} />
       </div>

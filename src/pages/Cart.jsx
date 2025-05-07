@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import EmptyCart from "../components/EmptyCart";
 import CartProducts from "../components/CartProducts";
 import CartTotal from "../components/CartTotal";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const storedProducts = JSON.parse(localStorage.getItem("CartProducts")) || [];
@@ -36,10 +37,11 @@ const Cart = () => {
   const removeItem = (id) => {
     setCartProducts((prev) => {
       const updatedCart = prev.filter((item) => item.id !== id);
-      localStorage.setItem("CartProducts", JSON.stringify(updatedCart)); // update localStorage also
+      localStorage.setItem("CartProducts", JSON.stringify(updatedCart)); 
       return updatedCart;
       
     });
+    toast.success("Product is removed from cart successfully")
     };
 
     if (cartProducts.length === 0) {
@@ -55,7 +57,7 @@ const Cart = () => {
         <p className="w-8 md:w-11 h-[2px] bg-[#414141] "></p>
       </div>
 
-      <div className="flex gap-4 justify-between">
+      <div className="flex flex-col lg:flex-row gap-4 justify-between">
         <div className="basis-2/3 space-y-4">
           {cartProducts.map((item) => (
             <CartProducts
